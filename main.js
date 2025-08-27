@@ -17,18 +17,23 @@ for (let i = 1; i <= 9; i++) {
   }
 }
 
-const parentCards = document.getElementsByClassName('card');
+// heart btns click count
+let favouritCount = document.getElementById('nav-heart-count');
+let count = parseInt(favouritCount.innerText);
 
-for (let parent of parentCards) {
-  // create parent container
-  const parentDiv = document.createElement('div');
-  parentDiv.classList.add('flex', 'items-center');
+const heartBtns = document.querySelectorAll('.heart');
 
-  // create img
-  const img = document.createElement('img');
-  img.classList.add('w-6');
-  img.src = './assets/heart-outline.png';
-  parentDiv.appendChild(img);
-  parent.appendChild(parentDiv);
+for (let btn of heartBtns) {
+  btn.addEventListener('click', function () {
+    count++;
+    favouritCount.innerText = count;
+  });
 }
+
+// call btns click function
+
+
+
+
+
 

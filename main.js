@@ -16,6 +16,15 @@ for (let i = 1; i <= 9; i++) {
     });
   }
 }
+// mobile menu
+document.getElementById('menu-icon').addEventListener('click', function () {
+  const mobileMenu = document.getElementById('mobile-menu-area');
+  mobileMenu.classList.toggle('hidden');
+  if (!mobileMenu.classList.contains('hidden')) {
+    mobileMenu.classList.add('flex', 'flex-col', 'gap-2');
+  }
+});
+
 
 // heart btns click count
 let favouritCount = document.getElementById('nav-heart-count');
@@ -38,7 +47,7 @@ let coins = parseInt(coinDiv.innerText);
 const d = new Date();
 const time = d.toLocaleTimeString();
 
-let historyArea = document.getElementById('right-area');
+const historyList = document.getElementById('history-list');
 
 const callBtns = document.querySelectorAll('.call-btn');
 
@@ -49,21 +58,51 @@ for (let btn of callBtns){
         e.target.parentNode.parentNode.querySelector('h6').innerText
       } ${e.target.parentNode.parentNode.querySelector('p').innerText}...`
     );
+    if (coins <= 0) {
+      alert('❌আপনার পর্যাপ্ত কয়েন নেই। কল করতে কমপক্ষে ২০ কয়েন লাগবে।');
+      return;
+    }
     coins -= 20;
     coinDiv.innerText = coins;
     
-    historyArea.innerHTML += `
-  
-  <div>
-    <div class="flex items-center justify-between">
-      <div class="flex flex-col gap-1">
-        <p>${e.target.closest('.card').querySelector('h6').innerText}</p>
-        <p>${e.target.closest('.card').querySelector('p').innerText}</p>
+    historyList.innerHTML += `
+    <div class="flex flex-col">
+      <div class="flex items-center justify-between bg-[#fafafa] rounded-lg p-4 mb-2">
+        <div class="flex flex-col gap-1">
+          <p class="font-hind text-lg text-[#111111] font-extrabold">${
+            e.target.parentNode.parentNode.querySelector('h3').innerText
+          }</p>
+          <p class="text-lg text-[#5c5c5c] font-hind">${
+            e.target.parentNode.parentNode.querySelector('p').innerText
+          }</p>
+        </div>
+        <div class="text-[#111111] font-hind text-lg">${time}</div>
       </div>
-      <div>${time}</div>
     </div>
-  </div>
 `;
+  })
+}
+
+// clear btn functionality 
+const clearBtn = document.getElementById('clear-btn');
+clearBtn.addEventListener('click', function () {
+  historyList.innerHTML = '';
+});
+
+
+// copy btn functionality
+const copyBtns = document.querySelectorAll('.copy-btn');
+const copyCount = document.getElementById('nav-copy-count');
+let parseCopyCount = parseInt(copyCount.innerText);
+
+for (let btn of copyBtns) {
+  btn.addEventListener('click', function () {
+    parseCopyCount++;
+    copyCount.innerText = parseCopyCount;
+    const card = btn.parentNode.parentNode;
+    const textCopy = card.querySelector('.help-line-number').innerText;
+    navigator.clipboard.writeText(textCopy);
+    alert(`নাম্বার কপি হয়েছে : ${textCopy}`);
   })
 }
 

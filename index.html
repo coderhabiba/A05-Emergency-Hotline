@@ -19,6 +19,8 @@
     <!-- navbar area -->
     <section class="navbar shadow-[0px_1px_50px_0px_#b5b5b540]">
       <nav class="container mx-auto py-3 flex items-center justify-between">
+
+        <!-- logo area -->
         <div class="logo-area flex items-center gap-3">
           <div class="logo-img lg:w-[50px] w-10 lg:h-[50px] h-10">
             <img class="w-full h-full" src="./assets/logo.png" alt="logo">
@@ -27,13 +29,13 @@
             <h2 class="lg:text-2xl text-sm lg:font-extrabold font-bold text-[#006747] lg:leading-7">Emergency <br>
               Service</h2>
           </div>
-        </div>
-
-        <div class="menu-area flex items-center lg:gap-5 gap-1">
+        </div><!-- logo area -->
+        
+        <!-- menu area -->
+        <div class="menu-area lg:flex items-center lg:gap-5 hidden">
 
           <!-- favourit area -->
-          <div
-            class="favourit-area rounded-[50px] lg:py-2 py-1 lg:px-5 px-3 bg-[#41FF6B1A] flex items-center lg:gap-[10px] gap-1 lg:font-extrabold font-semibold text-sm">
+          <div class="favourit-area rounded-[50px] lg:py-2 py-1 lg:px-5 px-3 bg-[#41FF6B1A] flex items-center lg:gap-[10px] gap-1 lg:font-extrabold font-semibold text-sm">
             <span id="nav-heart-count">0</span>
             <div class="heart lg:w-[30px] w-4 lg:h-[30px] h-4">
               <img class="w-full" src="./assets/heart.png" alt="heart">
@@ -41,8 +43,7 @@
           </div><!-- favourit area -->
 
           <!-- coin area -->
-          <div
-            class="coin-area rounded-[50px] lg:py-2 py-1 lg:px-5 px-3 bg-[#41FF6B1A] flex items-center lg:gap-[10px] gap-1 lg:font-extrabold font-semibold text-sm">
+          <div class="coin-area rounded-[50px] lg:py-2 py-1 lg:px-5 px-3 bg-[#41FF6B1A] flex items-center lg:gap-[10px] gap-1 lg:font-extrabold font-semibold text-sm">
             <span id="nav-coin-count">100</span>
             <div class="heart lg:w-[30px] w-4 lg:h-[30px] h-4">
               <img class="w-full" src="./assets/coin.png" alt="coin">
@@ -50,19 +51,51 @@
           </div><!-- coin area -->
 
           <!-- copy area -->
-          <div
-            class="copy-area text-white leading-6 rounded-[50px] lg:py-2 py-1 lg:px-5 px-3 bg-[#00A63E] flex items-center lg:gap-[10px] gap-1 font-semibold">
+          <div class="copy-area text-white leading-6 rounded-[50px] lg:py-2 py-1 lg:px-5 px-3 bg-[#00A63E] flex items-center lg:gap-[10px] gap-1 font-semibold">
             <span id="nav-copy-count">2</span>
             <span>Copy</span>
           </div> <!-- copy area -->
 
-        </div>
+        </div><!-- menu area -->
+        
+        <!-- mobile menu -->
+        <section class="mobile-menu lg:hidden">
+          <div id="menu-icon" class="w-10 h-10"><img class="w-full h-full" src="./assets/menu.png" alt="menu-icon"></div>
+
+          <!-- mobile menu navbar -->
+          <div id="mobile-menu-area" class="bg-[#131111] rounded-xl p-3 absolute right-[10%] top-[8%] w-[180px] hidden">
+          
+            <!-- favourit area -->
+            <div class="favourit-area rounded-[50px] lg:py-2 py-1 lg:px-5 px-3 bg-[#b4b8b58e] flex items-center justify-center lg:gap-[10px] gap-1 lg:font-extrabold font-semibold text-sm text-white">
+              <span id="mobile-heart-count">0</span>
+              <div class="heart lg:w-[30px] w-4 lg:h-[30px] h-4">
+                <img class="w-full" src="./assets/heart.png" alt="heart">
+              </div>
+            </div><!-- favourit area -->
+          
+            <!-- coin area -->
+            <div class="coin-area rounded-[50px] lg:py-2 py-1 lg:px-5 px-3 bg-[#b4b8b58e] flex items-center justify-center lg:gap-[10px] gap-1 lg:font-extrabold font-semibold text-sm text-white">
+              <span id="mobile-coin-count">100</span>
+              <div class="heart lg:w-[30px] w-4 lg:h-[30px] h-4">
+                <img class="w-full" src="./assets/coin.png" alt="coin">
+              </div>
+            </div><!-- coin area -->
+          
+            <!-- copy area -->
+            <div class="copy-area text-white leading-6 rounded-[50px] lg:py-2 py-1 lg:px-5 px-3 bg-[#00A63E] flex items-center justify-center lg:gap-[10px] gap-1 font-semibold text-sm">
+              <span id="mobile-copy-count">2</span>
+              <span>Copy</span>
+            </div> <!-- copy area -->
+          
+          </div><!-- mobile menu navbar -->
+
+        </section><!-- mobile menu -->
+
       </nav>
     </section><!-- navbar area -->
 
     <!-- banner area -->
-    <section
-      class="banner-area bg-linear-[90deg] from-[#013223] via-[#006747] to-[#013223] text-white flex flex-col items-center justify-center py-6 text-center">
+    <section class="banner-area bg-linear-[90deg] from-[#013223] via-[#006747] to-[#013223] text-white flex flex-col items-center justify-center py-6 text-center">
       <div class="banner-logo-img w-[92px] h-[92px]">
         <img class="w-full h-full" src="./assets/logo-dark.png" alt="logo">
       </div>
@@ -96,14 +129,12 @@
             </div>
             <h3 class="font-hind text-[#111111] text-2xl font-semibold leading-8">জাতীয় জরুরি সেবা</h3>
             <h6 class="text-[#5c5c5c] font-roboto">National Emergency</h6>
-            <p class="mt-3 text-[#111111] text-[32px] font-bold font-roboto">999</p>
-            <button
-              class="font-hind mb-4 py-[6px] px-4 bg-[#f2f2f2] rounded-full w-[100px] text-[#5c5c5c]">সর্বজনীন</button>
+            <p class="help-line-number mt-3 text-[#111111] text-[32px] font-bold font-roboto">999</p>
+            <button class="font-hind mb-4 py-[6px] px-4 bg-[#f2f2f2] rounded-full w-[100px] text-[#5c5c5c]">সর্বজনীন</button>
 
             <div class="card-btn-area grid lg:grid-cols-2 grid-cols-1 items-center gap-2">
 
-              <button id="copy-btn-1"
-                class="btn copy-btn flex items-center gap-2 bg-white border border-[#D4D6D5] text-[#5C5C5C] rounded-lg hover:text-white hover:bg-[#00A63E] text-sm">
+              <button id="copy-btn-1" class="btn copy-btn flex items-center gap-2 bg-white border border-[#D4D6D5] text-[#5C5C5C] rounded-lg hover:text-white hover:bg-[#00A63E] text-sm">
                 <span class="w-4 h-4">
                   <img id="gray-icon-1" class="w-full h-full" src="./assets/copy.png" alt="copy-sign">
                   <img id="white-icon-1" src="./assets/copy-48.png" alt="white-copy">
@@ -130,7 +161,7 @@
             </div>
             <h3 class="font-hind text-[#111111] text-2xl font-semibold leading-8">পুলিশ</h3>
             <h6 class="text-[#5c5c5c] font-roboto">Police</h6>
-            <p class="mt-3 text-[#111111] text-[32px] font-bold font-roboto">999</p>
+            <p class="help-line-number mt-3 text-[#111111] text-[32px] font-bold font-roboto">999</p>
             <button
               class="font-hind mb-4 py-[6px] px-4 bg-[#f2f2f2] rounded-full w-[100px] text-[#5c5c5c]">পুলিশ</button>
 
@@ -164,7 +195,7 @@
             </div>
             <h3 class="font-hind text-[#111111] text-2xl font-semibold leading-8">ফায়ার সার্ভিস</h3>
             <h6 class="text-[#5c5c5c] font-roboto">Fire Service</h6>
-            <p class="mt-3 text-[#111111] text-[32px] font-bold font-roboto">999</p>
+            <p class="help-line-number mt-3 text-[#111111] text-[32px] font-bold font-roboto">999</p>
             <button
               class="font-hind mb-4 py-[6px] px-4 bg-[#f2f2f2] rounded-full w-[100px] text-[#5c5c5c]">ফায়ার</button>
 
@@ -177,10 +208,7 @@
                   <img id="white-icon-3" src="./assets/copy-48.png" alt="white-copy">
                 </span>Copy</button>
 
-              <button
-                class="call-btn btn flex items-center gap-2 bg-[#00A63E] text-white hover:bg-green-700 text-sm rounded-lg"><span
-                  class="w-4 h-4"><img class="w-full h-full" src="./assets/call.png"
-                    alt="call-sign"></span>Call</button>
+              <button class="call-btn btn flex items-center gap-2 bg-[#00A63E] text-white hover:bg-green-700 text-sm rounded-lg"><span class="w-4 h-4"><img class="w-full h-full" src="./assets/call.png" alt="call-sign"></span>Call</button>
 
             </div>
 
@@ -198,7 +226,7 @@
             </div>
             <h3 class="font-hind text-[#111111] text-2xl font-semibold leading-8">অ্যাম্বুলেন্স</h3>
             <h6 class="text-[#5c5c5c] font-roboto">Ambulance</h6>
-            <p class="mt-3 text-[#111111] text-[32px] font-bold font-roboto">1994-999999</p>
+            <p class="help-line-number mt-3 text-[#111111] text-[32px] font-bold font-roboto">1994-999999</p>
             <button
               class="font-hind mb-4 py-[6px] px-4 bg-[#f2f2f2] rounded-full w-[100px] text-[#5c5c5c]">স্বাস্থ্য</button>
 
@@ -232,7 +260,7 @@
             </div>
             <h3 class="font-hind text-[#111111] text-2xl font-semibold leading-8">নারী ও শিশু সহায়তা</h3>
             <h6 class="text-[#5c5c5c] font-roboto">Women & Child Helpline</h6>
-            <p class="mt-3 text-[#111111] text-[32px] font-bold font-roboto">109</p>
+            <p class="help-line-number mt-3 text-[#111111] text-[32px] font-bold font-roboto">109</p>
             <button
               class="font-hind mb-4 py-[6px] px-4 bg-[#f2f2f2] rounded-full w-[100px] text-[#5c5c5c]">সহায়তা</button>
 
@@ -266,7 +294,7 @@
             </div>
             <h3 class="font-hind text-[#111111] text-2xl font-semibold leading-8">দুদক</h3>
             <h6 class="text-[#5c5c5c] font-roboto">Anti-Corruption</h6>
-            <p class="mt-3 text-[#111111] text-[32px] font-bold font-roboto">106</p>
+            <p class="help-line-number mt-3 text-[#111111] text-[32px] font-bold font-roboto">106</p>
             <button
               class="font-hind mb-4 py-[6px] px-4 bg-[#f2f2f2] rounded-full w-[100px] text-[#5c5c5c]">সরকারি</button>
 
@@ -300,7 +328,7 @@
             </div>
             <h3 class="font-hind text-[#111111] text-2xl font-semibold leading-8">বিদ্যুৎ বিভ্রাট</h3>
             <h6 class="text-[#5c5c5c] font-roboto">Electricity Outage</h6>
-            <p class="mt-3 text-[#111111] text-[32px] font-bold font-roboto">16216</p>
+            <p class="help-line-number mt-3 text-[#111111] text-[32px] font-bold font-roboto">16216</p>
             <button
               class="font-hind mb-4 py-[6px] px-4 bg-[#f2f2f2] rounded-full w-[100px] text-[#5c5c5c]">বিদ্যুৎ</button>
 
@@ -334,7 +362,7 @@
             </div>
             <h3 class="font-hind text-[#111111] text-2xl font-semibold leading-8">ব্র্যাক</h3>
             <h6 class="text-[#5c5c5c] font-roboto">Brac</h6>
-            <p class="mt-3 text-[#111111] text-[32px] font-bold font-roboto">16445</p>
+            <p class="help-line-number mt-3 text-[#111111] text-[32px] font-bold font-roboto">16445</p>
             <button
               class="font-hind mb-4 py-[6px] px-4 bg-[#f2f2f2] rounded-full w-[100px] text-[#5c5c5c]">এনজিও</button>
 
@@ -368,7 +396,7 @@
             </div>
             <h3 class="font-hind text-[#111111] text-2xl font-semibold leading-8">বাংলাদেশ রেলওয়ে</h3>
             <h6 class="text-[#5c5c5c] font-roboto">Bangladesh Railway</h6>
-            <p class="mt-3 text-[#111111] text-[32px] font-bold font-roboto">163</p>
+            <p class="help-line-number mt-3 text-[#111111] text-[32px] font-bold font-roboto">163</p>
             <button
               class="font-hind mb-4 py-[6px] px-4 bg-[#f2f2f2] rounded-full w-[100px] text-[#5c5c5c]">পরিবহন</button>
 
@@ -396,16 +424,17 @@
 
         <!-- right area -->
         <div id="right-area" class="bg-white lg:w-[20%] shadow-[0px 2px 3px 0px #00000026] p-6 rounded-xl">
-          <div class="header-history flex items-center justify-between">
+          <div class="header-history flex items-center justify-between mb-4">
             <div class="flex items-center gap-2">
               <div class="w-6 h-6">
                 <img class="w-full h-full" src="./assets/history.png" alt="history">
               </div>
               <span class="font-roboto text-xl font-medium leading-7">Call History</span>
             </div>
-            <button
-              class="text-white leading-6 rounded-[50px] lg:py-2 py-1 lg:px-5 px-3 bg-[#00A63E] flex items-center lg:gap-[10px] gap-1 font-semibold text-xs lg:text-base">Clear</button>
+            <button id="clear-btn" class="text-white leading-6 rounded-[50px] lg:py-2 py-1 lg:px-5 px-3 bg-[#00A63E] flex items-center lg:gap-[10px] gap-1 font-semibold text-xs lg:text-base">Clear</button>
           </div>
+          <!-- history list container -->
+          <div id="history-list"></div>
         </div><!-- right area -->
 
       </div><!-- home page -->

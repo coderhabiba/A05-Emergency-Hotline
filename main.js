@@ -28,6 +28,7 @@ document.getElementById('menu-icon').addEventListener('click', function () {
 
 // heart btns click count
 let favouritCount = document.getElementById('nav-heart-count');
+let mobileHeartCount = document.getElementById('mobile-heart-count');
 let count = parseInt(favouritCount.innerText);
 
 const heartBtns = document.querySelectorAll('.heart');
@@ -36,12 +37,14 @@ for (let btn of heartBtns) {
   btn.addEventListener('click', function () {
     count++;
     favouritCount.innerText = count;
+    mobileHeartCount.innerText = count;
   });
 }
 
 
 // call btns click function
 let coinDiv = document.getElementById('nav-coin-count');
+let mobileCoinDiv = document.getElementById('mobile-coin-count');
 let coins = parseInt(coinDiv.innerText);
 
 const d = new Date();
@@ -64,6 +67,7 @@ for (let btn of callBtns){
     }
     coins -= 20;
     coinDiv.innerText = coins;
+    mobileCoinDiv.innerText = coins;
     
     historyList.innerHTML += `
     <div class="flex flex-col">
@@ -83,22 +87,19 @@ for (let btn of callBtns){
   })
 }
 
-// clear btn functionality 
-const clearBtn = document.getElementById('clear-btn');
-clearBtn.addEventListener('click', function () {
-  historyList.innerHTML = '';
-});
-
 
 // copy btn functionality
 const copyBtns = document.querySelectorAll('.copy-btn');
 const copyCount = document.getElementById('nav-copy-count');
+const mobileCopyCount = document.getElementById('mobile-copy-count');
 let parseCopyCount = parseInt(copyCount.innerText);
 
 for (let btn of copyBtns) {
   btn.addEventListener('click', function () {
     parseCopyCount++;
     copyCount.innerText = parseCopyCount;
+    mobileCopyCount.innerText = parseCopyCount;
+
     const card = btn.parentNode.parentNode;
     const textCopy = card.querySelector('.help-line-number').innerText;
     navigator.clipboard.writeText(textCopy);
@@ -106,6 +107,12 @@ for (let btn of copyBtns) {
   })
 }
 
+
+// clear btn functionality 
+const clearBtn = document.getElementById('clear-btn');
+clearBtn.addEventListener('click', function () {
+  historyList.innerHTML = '';
+});
 
 
 
